@@ -22,11 +22,11 @@
 |-----|----|
 | | |
 |&argv              | 0x1000  // no memory for this |
-| | |                                               
+| | |
 |0x1000            | 0x1010                        |
 |argv               | 0x1010                        |
 |&argv[0]           | 0x1010                        |
-| | |                                               
+| | |
 |0x1010            | 0x1020                        |
 |argv[0]            | 0x1020                        |
 |*argv              | 0x1020                        |
@@ -57,7 +57,7 @@
 | Memory address|    Value at that memory address|
 |-----|----|
 | | |
-|&argv = 0xffffd01c | 0xffffd010 | // the value in argv is 0ffffd0010
+|&argv = 0xffffd01c | 0xffffd010  // the value in argv is 0ffffd0010
                                    // argv  AKA  &argv[0]  AKA  &(*(argv+0)) |
 | | |
 |(the address of argv[0] is 0fffd0010)| |
