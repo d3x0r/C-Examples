@@ -57,12 +57,10 @@
 | Memory address|    Value at that memory address|
 |-----|----|
 | | |
-|&argv = 0xffffd01c | 0xffffd010  // the value in argv is 0ffffd0010
-                                   // argv  AKA  &argv[0]  AKA  &(*(argv+0)) |
+|&argv = 0xffffd01c | 0xffffd010  // the value in argv is 0ffffd0010.  argv  AKA  &argv[0]  AKA  &(*(argv+0)) |
 | | |
 |(the address of argv[0] is 0fffd0010)| |
-|&argv[0] = 0xffffd010: |0xffffd000 // the value in argv[0] is 0fffd000
-                                  // argv[0], AKA *argv       AKA  &argv[0][0]   |
+|&argv[0] = 0xffffd010: |0xffffd000 // the value in argv[0] is 0fffd000.   argv[0], AKA *argv       AKA  &argv[0][0]   |
 |&argv[1] = 0xffffd014: |0xffffd006 // argv[1], AKA *(argv + 1) AKA  &argv[0][1]|
 |&argv[2] = 0xffffd018: |0x00000000 // argv[2], AKA *(argv + 2)|
 | | |
