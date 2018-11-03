@@ -86,36 +86,37 @@
 #include <stdio.h>
  
 int main (int argc, char *argv[]){
-        printf( "argv           = %p\n", argv );
-        printf( "&argv          = %p\n", &argv );
-        printf( "*argv          = %p\n", *argv );
-        printf( "argv[0]        = %p\n", argv[0] );
-        printf( "&argv[0]       = %p\n", &argv[0] );
-        printf( "&( *(argv+0) ) = %p\n", &( *(argv+0) ) );
-        printf( "**argv         = %c(%d 0x%02x)\n", **argv, **argv, **argv );
-        printf( "&(**argv)      = %p\n", &(**argv) );
-        printf( "(*argv)[0]     = %c(%d 0x%02x)\n", (*argv)[0],(*argv)[0],(*argv)[0] );
-        printf( "&(*argv)[0]    = %p\n", &(**argv) );
- 
-        printf( "(char*)argv[0]   = %s\n", argv[0] );
-        printf( "(char)argv[0][0] = %c\n", argv[0][0] );
- 
+        printf( "(char**)  argv           = %p\n", argv );
+        printf( "(char***)&argv           = %p\n", &argv );
+        printf( "(char*)   *argv          = %p\n", *argv );
+        printf( "(char*)   *(argv+0)      = %p\n", *argv );
+        printf( "(char*)   argv[0]        = %p\n", argv[0] );
+        printf( "(char**) &argv[0]        = %p\n", &argv[0] );
+        printf( "(char**)  &( *(argv+0) ) = %p\n", &( *(argv+0) ) );
+        printf( "(char)    **argv         = %c(%d 0x%02x)\n", **argv, **argv, **argv );
+        printf( "(char*) &(**argv)        = %p\n", &(**argv) );
+        printf( "(char)    (*argv)[0]     = %c(%d 0x%02x)\n", (*argv)[0],(*argv)[0],(*argv)[0] );
+        printf( "(char*)  &(*argv)[0]     = %p\n", &(**argv) );
+
+        printf( "(char*)argv[0]           = %s\n", argv[0] );
+        printf( "(char)argv[0][0]         = %c(%d 0x%02x)\n", argv[0][0],argv[0][0],argv[0][0] );
+
         return 0;
 }
 ```
 
 ## Example program output
 ```
-argv           = 0x7ffdb638a968
-&argv          = 0x7ffdb638a878
-*argv          = 0x7ffdb638bf02
-argv[0]        = 0x7ffdb638bf02
-&argv[0]       = 0x7ffdb638a968
-&( *(argv+0) ) = 0x7ffdb638a968
-**argv         = .(46 0x2e)
-&(**argv)      = 0x7ffdb638bf02
-(*argv)[0]     = .(46 0x2e)
-&(*argv)[0]    = 0x7ffdb638bf02
-(char*)argv[0]   = ./prog
-(char)argv[0][0] = .
-```
+(char**)  argv           = 0x7fff90a8cd08
+(char***)&argv           = 0x7fff90a8cc18
+(char*)   *argv          = 0x7fff90a8cf02
+(char*)   *(argv+0)      = 0x7fff90a8cf02
+(char*)   argv[0]        = 0x7fff90a8cf02
+(char**) &argv[0]        = 0x7fff90a8cd08
+(char**)  &( *(argv+0) ) = 0x7fff90a8cd08
+(char)    **argv         = .(46 0x2e)
+(char*) &(**argv)        = 0x7fff90a8cf02
+(char)    (*argv)[0]     = .(46 0x2e)
+(char*)  &(*argv)[0]     = 0x7fff90a8cf02
+(char*)argv[0]           = ./prog
+(char)argv[0][0]         = .(46 0x2e)```
