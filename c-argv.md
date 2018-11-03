@@ -119,4 +119,5 @@ int main (int argc, char *argv[]){
 (char)    (*argv)[0]     = .(46 0x2e)
 (char*)  &(*argv)[0]     = 0x7fff90a8cf02
 (char*)argv[0]           = ./prog
-(char)argv[0][0]         = .(46 0x2e)```
+(char)argv[0][0]         = .(46 0x2e)
+```
