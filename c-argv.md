@@ -79,3 +79,27 @@
 |0xffffd00a:| n     |
 |0xffffd00b:| a     |
 |0xffffd00c:| NUL  |
+
+
+Example program
+```
+#include <stdio.h>
+ 
+int main (int argc, char *argv[]){
+        printf( "argv           = %p\n", argv );
+        printf( "&argv          = %p\n", &argv );
+        printf( "*argv          = %p\n", *argv );
+        printf( "argv[0]        = %p\n", argv[0] );
+        printf( "&argv[0]       = %p\n", &argv[0] );
+        printf( "&( *(argv+0) ) = %p\n", &( *(argv+0) ) );
+        printf( "**argv         = %c(%d 0x%02x)\n", **argv, **argv, **argv );
+        printf( "&(**argv)      = %p\n", &(**argv) );
+        printf( "(*argv)[0]     = %c(%d 0x%02x)\n", (*argv)[0],(*argv)[0],(*argv)[0] );
+        printf( "&(*argv)[0]    = %p\n", &(**argv) );
+ 
+        printf( "(char*)argv[0]   = %s\n", argv[0] );
+        printf( "(char)argv[0][0] = %c\n", argv[0][0] );
+ 
+        return 0;
+}
+```
