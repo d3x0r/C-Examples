@@ -81,7 +81,7 @@
 |0xffffd00c:| NUL  |
 
 
-Example program
+## Example program
 ```
 #include <stdio.h>
  
@@ -102,4 +102,20 @@ int main (int argc, char *argv[]){
  
         return 0;
 }
+```
+
+## Example program output
+```
+argv           = 0x7ffdb638a968
+&argv          = 0x7ffdb638a878
+*argv          = 0x7ffdb638bf02
+argv[0]        = 0x7ffdb638bf02
+&argv[0]       = 0x7ffdb638a968
+&( *(argv+0) ) = 0x7ffdb638a968
+**argv         = .(46 0x2e)
+&(**argv)      = 0x7ffdb638bf02
+(*argv)[0]     = .(46 0x2e)
+&(*argv)[0]    = 0x7ffdb638bf02
+(char*)argv[0]   = ./prog
+(char)argv[0][0] = .
 ```
